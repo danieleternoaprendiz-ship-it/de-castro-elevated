@@ -28,6 +28,16 @@ import logoDc from "@/assets/logo-dc.png.asset.json";
 import selo from "@/assets/selo-engenharia.png.asset.json";
 import { Reveal } from "@/components/site/reveal";
 import { ClientsCarousel, type ClientLogo } from "@/components/site/clients-carousel";
+import cliBoulevard from "@/assets/cli-boulevard-shopping.png.asset.json";
+import cliSalvadorShopping from "@/assets/cli-salvador-shopping.png.asset.json";
+import cliMoeve from "@/assets/cli-moeve.png.asset.json";
+import cliSabesp from "@/assets/cli-sabesp.png.asset.json";
+import cliSanasa from "@/assets/cli-sanasa.png.asset.json";
+import cliHupes from "@/assets/cli-hupes.png.asset.json";
+import cliAliancaStar from "@/assets/cli-alianca-star.png.asset.json";
+import cliReceita from "@/assets/cli-receita-federal.png.asset.json";
+import cliJustica from "@/assets/cli-justica-federal.png.asset.json";
+import cliDesenbahia from "@/assets/cli-desenbahia.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -147,15 +157,68 @@ const processo = [
 ];
 
 const clients: ClientLogo[] = [
-  { name: "Indústrias", segment: "Automação industrial" },
-  { name: "Hospitais", segment: "Automação predial" },
-  { name: "Shopping Centers", segment: "Facilities & BMS" },
-  { name: "Redes Atacadistas", segment: "Refrigeração & energia" },
-  { name: "Condomínios Logísticos", segment: "Infraestrutura elétrica" },
-  { name: "Construtoras", segment: "Elétrica predial" },
-  { name: "Arquitetos", segment: "Automação residencial" },
-  { name: "Alto Padrão", segment: "Residencial premium" },
+  {
+    name: "Boulevard Shopping Camaçari",
+    category: "Shopping Centers",
+    segment: "Facilities & BMS",
+    logo: cliBoulevard.url,
+  },
+  {
+    name: "Salvador Shopping",
+    category: "Shopping Centers",
+    segment: "Automação predial",
+    logo: cliSalvadorShopping.url,
+  },
+  {
+    name: "Moeve",
+    category: "Indústria & Energia",
+    segment: "Automação industrial",
+    logo: cliMoeve.url,
+  },
+  {
+    name: "Sabesp",
+    category: "Saneamento",
+    segment: "Automação de processos",
+    logo: cliSabesp.url,
+  },
+  {
+    name: "Sanasa Campinas",
+    category: "Saneamento",
+    segment: "CLP & SCADA",
+    logo: cliSanasa.url,
+  },
+  {
+    name: "Complexo HUPES",
+    category: "Saúde",
+    segment: "Elétrica hospitalar",
+    logo: cliHupes.url,
+  },
+  {
+    name: "Aliança Star — Rede D'Or",
+    category: "Saúde",
+    segment: "Infraestrutura elétrica",
+    logo: cliAliancaStar.url,
+  },
+  {
+    name: "Receita Federal",
+    category: "Órgãos Públicos",
+    segment: "Elétrica predial",
+    logo: cliReceita.url,
+  },
+  {
+    name: "Justiça Federal",
+    category: "Órgãos Públicos",
+    segment: "Automação predial",
+    logo: cliJustica.url,
+  },
+  {
+    name: "Desenbahia",
+    category: "Órgãos Públicos",
+    segment: "Manutenção & eficiência",
+    logo: cliDesenbahia.url,
+  },
 ];
+
 
 const cultura = [
   {
