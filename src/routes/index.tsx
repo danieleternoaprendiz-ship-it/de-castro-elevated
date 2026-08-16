@@ -28,6 +28,16 @@ import logoDc from "@/assets/logo-dc.png.asset.json";
 import selo from "@/assets/selo-engenharia.png.asset.json";
 import { Reveal } from "@/components/site/reveal";
 import { ClientsCarousel, type ClientLogo } from "@/components/site/clients-carousel";
+import cliBoulevard from "@/assets/cli-boulevard-shopping.png.asset.json";
+import cliSalvadorShopping from "@/assets/cli-salvador-shopping.png.asset.json";
+import cliMoeve from "@/assets/cli-moeve.png.asset.json";
+import cliSabesp from "@/assets/cli-sabesp.png.asset.json";
+import cliSanasa from "@/assets/cli-sanasa.png.asset.json";
+import cliHupes from "@/assets/cli-hupes.png.asset.json";
+import cliAliancaStar from "@/assets/cli-alianca-star.png.asset.json";
+import cliReceita from "@/assets/cli-receita-federal.png.asset.json";
+import cliJustica from "@/assets/cli-justica-federal.png.asset.json";
+import cliDesenbahia from "@/assets/cli-desenbahia.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
