@@ -96,13 +96,13 @@ export function ClientsCarousel({ clients }: { clients: ClientLogo[] }) {
               key={c.name}
               className="surface-card group flex min-h-52 w-60 shrink-0 snap-start flex-col items-center justify-between gap-4 rounded-lg px-6 py-7 text-center sm:w-64"
             >
-              <div className="grid h-20 w-full place-items-center rounded-md bg-white/95 px-4 py-3 shadow-[0_0_0_1px_rgba(255,255,255,0.08)]">
+              <div className="grid h-24 w-full place-items-center overflow-hidden rounded-md bg-white/95 p-3 shadow-[0_0_0_1px_rgba(255,255,255,0.08)]">
                 {c.logo ? (
                   <img
                     src={c.logo}
                     alt={`Logo ${c.name}`}
                     loading="lazy"
-                    className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
+                    className="max-h-full w-auto max-w-full object-contain transition duration-500 group-hover:scale-105"
                   />
                 ) : (
                   <span className="font-display text-gilded text-lg uppercase tracking-[0.18em]">
