@@ -227,7 +227,7 @@ const valores = [
 ];
 
 function Index() {
-  const [activePortfolio, setActivePortfolio] = useState(portfolios[2].id);
+  const [activePortfolio, setActivePortfolio] = useState<string>(portfolios[2]!.id);
   const [openCultura, setOpenCultura] = useState<number | null>(0);
   const [scrolled, setScrolled] = useState(false);
 
@@ -238,7 +238,7 @@ function Index() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const current = portfolios.find((p) => p.id === activePortfolio) ?? portfolios[0];
+  const current = portfolios.find((p) => p.id === activePortfolio) ?? portfolios[0]!;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
