@@ -102,7 +102,7 @@ export function ClientsCarousel({ clients }: { clients: ClientLogo[] }) {
                     src={c.logo}
                     alt={`Logo ${c.name}`}
                     loading="lazy"
-                    className="max-h-14 w-auto max-w-full object-contain grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                    className="max-h-14 w-auto max-w-full object-contain transition duration-500 group-hover:scale-105"
                   />
                 ) : (
                   <span className="font-display text-gilded text-lg uppercase tracking-[0.18em]">
