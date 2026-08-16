@@ -169,7 +169,7 @@
 }
 
 @utility text-gilded {
-  background: var(--gradient-gold);
+  background: linear-gradient(135deg, oklch(0.62 0.11 72), oklch(0.88 0.1 90) 45%, oklch(0.7 0.12 78));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
