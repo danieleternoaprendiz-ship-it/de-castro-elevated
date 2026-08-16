@@ -147,15 +147,68 @@ const processo = [
 ];
 
 const clients: ClientLogo[] = [
-  { name: "Indústrias", segment: "Automação industrial" },
-  { name: "Hospitais", segment: "Automação predial" },
-  { name: "Shopping Centers", segment: "Facilities & BMS" },
-  { name: "Redes Atacadistas", segment: "Refrigeração & energia" },
-  { name: "Condomínios Logísticos", segment: "Infraestrutura elétrica" },
-  { name: "Construtoras", segment: "Elétrica predial" },
-  { name: "Arquitetos", segment: "Automação residencial" },
-  { name: "Alto Padrão", segment: "Residencial premium" },
+  {
+    name: "Boulevard Shopping Camaçari",
+    category: "Shopping Centers",
+    segment: "Facilities & BMS",
+    logo: cliBoulevard.url,
+  },
+  {
+    name: "Salvador Shopping",
+    category: "Shopping Centers",
+    segment: "Automação predial",
+    logo: cliSalvadorShopping.url,
+  },
+  {
+    name: "Moeve",
+    category: "Indústria & Energia",
+    segment: "Automação industrial",
+    logo: cliMoeve.url,
+  },
+  {
+    name: "Sabesp",
+    category: "Saneamento",
+    segment: "Automação de processos",
+    logo: cliSabesp.url,
+  },
+  {
+    name: "Sanasa Campinas",
+    category: "Saneamento",
+    segment: "CLP & SCADA",
+    logo: cliSanasa.url,
+  },
+  {
+    name: "Complexo HUPES",
+    category: "Saúde",
+    segment: "Elétrica hospitalar",
+    logo: cliHupes.url,
+  },
+  {
+    name: "Aliança Star — Rede D'Or",
+    category: "Saúde",
+    segment: "Infraestrutura elétrica",
+    logo: cliAliancaStar.url,
+  },
+  {
+    name: "Receita Federal",
+    category: "Órgãos Públicos",
+    segment: "Elétrica predial",
+    logo: cliReceita.url,
+  },
+  {
+    name: "Justiça Federal",
+    category: "Órgãos Públicos",
+    segment: "Automação predial",
+    logo: cliJustica.url,
+  },
+  {
+    name: "Desenbahia",
+    category: "Órgãos Públicos",
+    segment: "Manutenção & eficiência",
+    logo: cliDesenbahia.url,
+  },
 ];
+
 
 const cultura = [
   {
