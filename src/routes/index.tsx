@@ -519,33 +519,6 @@ const cultura = [
   },
 ];
 
-const areas = [
-  {
-    sigla: "ADM",
-    nome: "Administrativo",
-    text: "Diretoria, financeiro, compras, contratos e conformidade, RH e gestão de colaboradores, além de Operações & Tech.",
-  },
-  {
-    sigla: "COM",
-    nome: "Comercial",
-    text: "Processo comercial estruturado em 10 etapas — da prospecção fria ao pós-venda e aprendizado.",
-  },
-  {
-    sigla: "OM",
-    nome: "Obras e Manutenções",
-    text: "Planejamento e execução de obras, manutenção preventiva e corretiva, segurança e padrão de entrega.",
-  },
-  {
-    sigla: "MKT",
-    nome: "Marketing",
-    text: "Autoridade técnica em Instagram, LinkedIn e site, marketing de conteúdo e geração de demanda qualificada.",
-  },
-  {
-    sigla: "CI",
-    nome: "Cursos e Infoprodutos",
-    text: "Treinamentos e mentorias técnicas, e-books, manuais operacionais e templates comerciais e técnicos.",
-  },
-];
 
 const valores = [
   "Disciplina",
@@ -559,8 +532,20 @@ const valores = [
 
 function Index() {
   const [activePortfolio, setActivePortfolio] = useState<string>(portfolios[2]!.id);
+  const [activeGroup, setActiveGroup] = useState(0);
   const [openCultura, setOpenCultura] = useState<number | null>(0);
   const [scrolled, setScrolled] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      /* ignore */
+    }
+    setEmailCopied(true);
+    window.setTimeout(() => setEmailCopied(false), 2400);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -755,7 +740,10 @@ function Index() {
               <button
                 key={p.id}
                 type="button"
-                onClick={() => setActivePortfolio(p.id)}
+                onClick={() => {
+                  setActivePortfolio(p.id);
+                  setActiveGroup(0);
+                }}
                 className={`inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] transition ${
                   activePortfolio === p.id
                     ? "border-primary bg-primary/10 text-primary"
@@ -775,14 +763,47 @@ function Index() {
               {current.intro}
             </p>
             <div className="gold-rule my-8" />
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {current.items.map((it) => (
-                <li key={it} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <Wrench className="mt-0.5 size-4 shrink-0 text-primary" />
-                  <span>{it}</span>
-                </li>
+
+            <div role="tablist" aria-label="Escopos" className="flex flex-wrap gap-2">
+              {current.groups.map((g, i) => {
+                const on = i === groupIndex;
+                return (
+                  <button
+                    key={g.name}
+                    type="button"
+                    role="tab"
+                    aria-selected={on}
+                    onClick={() => setActiveGroup(i)}
+                    className={
+                      on
+                        ? "rounded-full border border-primary/70 bg-primary/15 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-primary transition"
+                        : "rounded-full border border-border px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition hover:border-primary/50 hover:text-primary"
+                    }
+                  >
+                    {g.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {group.services.map((s, i) => (
+                <article key={s.title} className="rounded-xl border border-border/70 bg-background/40 p-6">
+                  <span className="font-display text-gilded text-2xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h4 className="mt-2 text-base font-medium text-foreground">{s.title}</h4>
+                  <ul className="mt-4 space-y-3">
+                    {s.items.map((it) => (
+                      <li key={it} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <Wrench className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
