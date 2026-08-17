@@ -916,50 +916,6 @@ function Index() {
         </div>
       </section>
 
-      {/* ESTRUTURA */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-5">
-          <Reveal>
-            <SectionTitle
-              kicker="Estrutura"
-              title="Uma empresa organizada por áreas"
-              desc="Organograma vivo: cada área com responsabilidade, indicador e dono — o que garante entrega consistente e escala sem perder qualidade."
-            />
-          </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {areas.map((a, i) => (
-              <Reveal key={a.sigla} delay={i * 90}>
-                <article className="surface-card h-full rounded-xl p-7">
-                  <div className="flex items-center gap-4">
-                    <span
-                      className="font-display grid size-14 shrink-0 place-items-center rounded-lg text-sm text-primary-foreground"
-                      style={{ background: "var(--gradient-gold)" }}
-                    >
-                      {a.sigla}
-                    </span>
-                    <h3 className="font-display min-w-0 text-xl">{a.nome}</h3>
-                  </div>
-                  <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
-                </article>
-              </Reveal>
-            ))}
-            <Reveal delay={450}>
-              <article className="surface-card flex h-full flex-col justify-center gap-3 rounded-xl p-7">
-                <Building2 className="size-7 text-primary" />
-                <h3 className="font-display text-xl">Abrangência</h3>
-                <ul className="mt-1 space-y-2 text-sm text-muted-foreground">
-                  {["Salvador", "Lauro de Freitas", "Camaçari"].map((c) => (
-                    <li key={c} className="flex items-center gap-2">
-                      <MapPin className="size-4 shrink-0 text-primary" />
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* CTA / CONTATO */}
       <section id="contato" className="relative overflow-hidden border-t border-border py-24">
