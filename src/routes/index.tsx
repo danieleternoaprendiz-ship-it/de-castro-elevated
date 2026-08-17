@@ -88,13 +88,108 @@ const portfolios = [
     icon: Home,
     intro:
       "Execução rápida e segura para quem precisa de uma instalação confiável, normatizada e sem retrabalho.",
-    items: [
-      "Retrofit e adequação de QDC",
-      "Adequação de tomadas e circuitos",
-      "Iluminação LED e luminotécnica",
-      "Infraestrutura elétrica predial",
-      "Laudos, ARTs e documentação técnica",
-      "Manutenção preventiva e corretiva",
+    groups: [
+      {
+        name: "Elétrica completa",
+        services: [
+          {
+            title: "Dimensionamento",
+            items: [
+              "Dimensionamento e projeto do quadro de distribuição (QDC)",
+              "Dimensionamento dos dispositivos de proteção",
+              "Dimensionamento da infraestrutura e cabos",
+            ],
+          },
+          {
+            title: "Instalação",
+            items: [
+              "Instalação do quadro de distribuição (QDC)",
+              "Instalação de infraestruturas e passagem de cabos",
+              "Instalação e conexão de tomadas, interruptores, lâmpadas e chuveiros elétricos",
+            ],
+          },
+          {
+            title: "Entrega",
+            items: [
+              "Testes de alimentação e operação",
+              "Elaboração e entrega dos projetos",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Retrofit",
+        services: [
+          {
+            title: "Diagnóstico avançado e dimensionamento de circuitos",
+            items: [
+              "Diagnóstico de curtos-circuitos e fugas de corrente",
+              "Dimensionamento para substituição de dispositivos de proteção (disjuntores)",
+              "Dimensionamento para substituição de circuitos e cabos",
+            ],
+          },
+          {
+            title: "Reestruturação do QDC",
+            items: [
+              "Retrofit completo do quadro de distribuição",
+              "Substituição dos dispositivos de proteção",
+              "Substituição de circuitos e cabos",
+            ],
+          },
+          {
+            title: "Implementações gerais",
+            items: [
+              "Substituição de tomadas e interruptores",
+              "Substituição de lâmpadas",
+              "Substituição de resistência de chuveiro elétrico",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Iluminação",
+        services: [
+          {
+            title: "Iluminação LED",
+            items: ["Instalação de linhas de LED em tetos, móveis e escadas"],
+          },
+          {
+            title: "Sensores de presença",
+            items: ["Instalação de sensores de presença para iluminação automática"],
+          },
+          {
+            title: "Instalações diversas",
+            items: [
+              "Substituição e instalação de lâmpadas e luminárias de jardim",
+              "Refletores, lustres, arandelas, pendentes e spots",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Gerais",
+        services: [
+          {
+            title: "Infraestrutura",
+            items: ["Organização de infraestruturas e cabos"],
+          },
+          {
+            title: "Instalações gerais",
+            items: [
+              "Instalação de televisão",
+              "Instalação de ventiladores de teto e de parede",
+              "Instalação de portão eletrônico",
+            ],
+          },
+          {
+            title: "Projetos",
+            items: [
+              "Projeto executivo das instalações elétricas",
+              "Projeto do QDC",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -104,13 +199,90 @@ const portfolios = [
     icon: Lightbulb,
     intro:
       "Conforto, cenas e controle inteligente integrados ao projeto de arquitetura — tecnologia que se usa todos os dias.",
-    items: [
-      "Cenas de iluminação e conforto térmico",
-      "Controle por app e assistentes virtuais",
-      "Automação de cortinas, climatização e acessos",
-      "Infraestrutura de rede e cabeamento estruturado",
-      "Integração com projeto de arquitetura",
-      "Eficiência energética residencial",
+    groups: [
+      {
+        name: "Segurança",
+        services: [
+          {
+            title: "Fechaduras eletrônicas de alta segurança",
+            items: ["Instalação, configuração e testes de operação de fechaduras inteligentes"],
+          },
+          {
+            title: "Monitoramento de vídeo inteligente",
+            items: ["Instalação de câmeras de segurança integradas a um sistema de supervisão"],
+          },
+          {
+            title: "Sistema de alarmes",
+            items: ["Configuração de alarmes inteligentes com notificações no celular em tempo real"],
+          },
+        ],
+      },
+      {
+        name: "Iluminação",
+        services: [
+          {
+            title: "Interruptores inteligentes",
+            items: [
+              "Instalação, configuração e testes de operação de interruptores inteligentes",
+              "Integração à assistente virtual via comando de voz",
+            ],
+          },
+          {
+            title: "Criação de cenários",
+            items: [
+              "Configuração de cenários de iluminação",
+              "Controle dos cenários por comando de voz",
+            ],
+          },
+          {
+            title: "Sensores automatizados",
+            items: ["Sensores de presença integrados ao sistema para iluminação automática"],
+          },
+        ],
+      },
+      {
+        name: "Climatização",
+        services: [
+          {
+            title: "Controle do ar-condicionado via smartphone",
+            items: [
+              "Integração de interfaces Wi-Fi e emissores de infravermelho de alta precisão",
+            ],
+          },
+          {
+            title: "Conforto térmico",
+            items: [
+              "Cenários personalizados: Modo Dormir, Modo Cinema e Modo Trabalho",
+              "Controle de temperatura em horários programados",
+            ],
+          },
+          {
+            title: "Integração com assistente virtual",
+            items: ["Ligar, desligar e controlar a temperatura por comando de voz"],
+          },
+        ],
+      },
+      {
+        name: "Controle",
+        services: [
+          {
+            title: "Automação de cargas e equipamentos",
+            items: [
+              "Pontos inteligentes para controle de geladeira, fogão, ventiladores, cafeteira e outros",
+            ],
+          },
+          {
+            title: "Medição de consumo",
+            items: ["Visualização em tempo real do gasto de energia de cada aparelho conectado"],
+          },
+          {
+            title: "Proteção elétrica inteligente",
+            items: [
+              "Desligamento automático em sobrecargas e picos de energia, evitando queima de equipamentos",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -120,13 +292,101 @@ const portfolios = [
     icon: Factory,
     intro:
       "Engenharia de controle de ponta a ponta: da especificação de instrumentação ao SCADA em operação assistida.",
-    items: [
-      "Levantamento de cargas e pontos de automação",
-      "Dimensionamento de cabos, eletrocalhas e eletrodutos",
-      "Especificação de sensores, transmissores e CLPs",
-      "Projeto executivo e arquitetura de rede",
-      "Programação de CLP, inversores e soft starters",
-      "Telas SCADA, alarmes, tendências e relatórios",
+    groups: [
+      {
+        name: "Infra e comandos",
+        services: [
+          {
+            title: "Dimensionamento",
+            items: [
+              "Dimensionamento e especificação de quadros de automação",
+              "Dimensionamento e especificação de infraestruturas e cabos",
+              "Dimensionamento e especificação de sensores e atuadores",
+            ],
+          },
+          {
+            title: "Instalação",
+            items: [
+              "Instalação e montagem de infraestrutura industrial",
+              "Eletrocalhas, eletrodutos e lançamento de cabos de potência, sinal e rede sob NR-10",
+            ],
+          },
+          {
+            title: "Inversores e soft starters",
+            items: [
+              "Configuração avançada de torque, velocidade e rampas de aceleração e frenagem",
+              "Integração em redes industriais via Modbus RTU/TCP",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Desenvolvimento",
+        services: [
+          {
+            title: "Programação de CLP",
+            items: [
+              "Lógicas complexas (Ladder/FBD/Script) para automação de processos e máquinas",
+            ],
+          },
+          {
+            title: "Interfaces Homem-Máquina (IHM)",
+            items: [
+              "Telas intuitivas para operação local, diagnóstico de falhas e controle de variáveis em tempo real",
+            ],
+          },
+          {
+            title: "Sistemas SCADA",
+            items: [
+              "Monitoramento em tempo real de variáveis críticas via rede",
+              "Controle centralizado da operação",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Projetos",
+        services: [
+          {
+            title: "Quadros elétricos e de automação",
+            items: ["Elaboração de projeto e layouts para montagem de quadros"],
+          },
+          {
+            title: "Engenharia de automação",
+            items: [
+              "Concepção do projeto de controle e automação",
+              "Elaboração do fluxograma de engenharia de automação",
+            ],
+          },
+          {
+            title: "Redes industriais",
+            items: ["Elaboração de arquitetura de rede de automação"],
+          },
+        ],
+      },
+      {
+        name: "Redes",
+        services: [
+          {
+            title: "Protocolos de comunicação",
+            items: [
+              "Configuração e diagnóstico de redes Modbus (RTU e TCP/IP), Profibus e Ethernet/IP",
+            ],
+          },
+          {
+            title: "Integração de dispositivos",
+            items: [
+              "Gateways, switches industriais e roteadores para comunicação entre SCADA, CLPs, IHMs e inversores",
+            ],
+          },
+          {
+            title: "Monitoramento e gestão remota",
+            items: [
+              "Centralização dos dispositivos da rede em sistemas BMS e SCADA para controle total do processo",
+            ],
+          },
+        ],
+      },
     ],
   },
 ];
