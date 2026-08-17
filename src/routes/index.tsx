@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Activity,
-  Building2,
   Cable,
+  Check,
   ChevronDown,
   Cpu,
   Factory,
@@ -13,7 +13,7 @@ import {
   Layers,
   Lightbulb,
   Linkedin,
-  MapPin,
+  Mail,
   MessageCircle,
   Monitor,
   Network,
@@ -38,6 +38,10 @@ import cliAliancaStar from "@/assets/cli-alianca-star.png.asset.json";
 import cliReceita from "@/assets/cli-receita-federal.png.asset.json";
 import cliJustica from "@/assets/cli-justica-federal.png.asset.json";
 import cliDesenbahia from "@/assets/cli-desenbahia.png.asset.json";
+import cliHcp from "@/assets/cli-hcp.png.asset.json";
+import cliHam from "@/assets/cli-ham.png.asset.json";
+import cliBsvc from "@/assets/cli-bsvc.png.asset.json";
+import cliSdb from "@/assets/cli-sdb.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,7 +65,11 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/5571000000000";
+const WHATSAPP =
+  "https://wa.me/5571991950855?text=" +
+  encodeURIComponent("Olá! Gostaria de falar com a De Castro Engenharia sobre um projeto.");
+const EMAIL = "daniel@decastroengenharia.com.br";
+const LINKEDIN = "https://www.linkedin.com/in/daniel-castro-santos/";
 
 const nav = [
   { href: "#empresa", label: "Empresa" },
