@@ -555,6 +555,8 @@ function Index() {
   }, []);
 
   const current = portfolios.find((p) => p.id === activePortfolio) ?? portfolios[0]!;
+  const groupIndex = Math.min(activeGroup, current.groups.length - 1);
+  const group = current.groups[groupIndex]!;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
