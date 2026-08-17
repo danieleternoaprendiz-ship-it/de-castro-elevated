@@ -1020,6 +1020,19 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Confirmação de e-mail copiado */}
+      <div
+        aria-live="polite"
+        className={`pointer-events-none fixed bottom-5 left-5 z-50 flex items-center gap-3 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-5 py-3 text-sm text-emerald-300 backdrop-blur transition-all duration-300 ${
+          emailCopied ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+        }`}
+      >
+        <span className="grid size-6 place-items-center rounded-full bg-emerald-500 text-black">
+          <Check className="size-4" />
+        </span>
+        E-mail copiado
+      </div>
     </div>
   );
 }
