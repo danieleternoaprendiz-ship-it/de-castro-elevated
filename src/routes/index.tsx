@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Activity,
-  Building2,
   Cable,
+  Check,
   ChevronDown,
   Cpu,
   Factory,
@@ -13,7 +13,7 @@ import {
   Layers,
   Lightbulb,
   Linkedin,
-  MapPin,
+  Mail,
   MessageCircle,
   Monitor,
   Network,
@@ -38,6 +38,10 @@ import cliAliancaStar from "@/assets/cli-alianca-star.png.asset.json";
 import cliReceita from "@/assets/cli-receita-federal.png.asset.json";
 import cliJustica from "@/assets/cli-justica-federal.png.asset.json";
 import cliDesenbahia from "@/assets/cli-desenbahia.png.asset.json";
+import cliHcp from "@/assets/cli-hcp.png.asset.json";
+import cliHam from "@/assets/cli-ham.png.asset.json";
+import cliBsvc from "@/assets/cli-bsvc.png.asset.json";
+import cliSdb from "@/assets/cli-sdb.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,7 +65,11 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP = "https://wa.me/5571000000000";
+const WHATSAPP =
+  "https://wa.me/5571991950855?text=" +
+  encodeURIComponent("Olá! Gostaria de falar com a De Castro Engenharia sobre um projeto.");
+const EMAIL = "daniel@decastroengenharia.com.br";
+const LINKEDIN = "https://www.linkedin.com/in/daniel-castro-santos/";
 
 const nav = [
   { href: "#empresa", label: "Empresa" },
@@ -80,13 +88,108 @@ const portfolios = [
     icon: Home,
     intro:
       "Execução rápida e segura para quem precisa de uma instalação confiável, normatizada e sem retrabalho.",
-    items: [
-      "Retrofit e adequação de QDC",
-      "Adequação de tomadas e circuitos",
-      "Iluminação LED e luminotécnica",
-      "Infraestrutura elétrica predial",
-      "Laudos, ARTs e documentação técnica",
-      "Manutenção preventiva e corretiva",
+    groups: [
+      {
+        name: "Elétrica completa",
+        services: [
+          {
+            title: "Dimensionamento",
+            items: [
+              "Dimensionamento e projeto do quadro de distribuição (QDC)",
+              "Dimensionamento dos dispositivos de proteção",
+              "Dimensionamento da infraestrutura e cabos",
+            ],
+          },
+          {
+            title: "Instalação",
+            items: [
+              "Instalação do quadro de distribuição (QDC)",
+              "Instalação de infraestruturas e passagem de cabos",
+              "Instalação e conexão de tomadas, interruptores, lâmpadas e chuveiros elétricos",
+            ],
+          },
+          {
+            title: "Entrega",
+            items: [
+              "Testes de alimentação e operação",
+              "Elaboração e entrega dos projetos",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Retrofit",
+        services: [
+          {
+            title: "Diagnóstico avançado e dimensionamento de circuitos",
+            items: [
+              "Diagnóstico de curtos-circuitos e fugas de corrente",
+              "Dimensionamento para substituição de dispositivos de proteção (disjuntores)",
+              "Dimensionamento para substituição de circuitos e cabos",
+            ],
+          },
+          {
+            title: "Reestruturação do QDC",
+            items: [
+              "Retrofit completo do quadro de distribuição",
+              "Substituição dos dispositivos de proteção",
+              "Substituição de circuitos e cabos",
+            ],
+          },
+          {
+            title: "Implementações gerais",
+            items: [
+              "Substituição de tomadas e interruptores",
+              "Substituição de lâmpadas",
+              "Substituição de resistência de chuveiro elétrico",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Iluminação",
+        services: [
+          {
+            title: "Iluminação LED",
+            items: ["Instalação de linhas de LED em tetos, móveis e escadas"],
+          },
+          {
+            title: "Sensores de presença",
+            items: ["Instalação de sensores de presença para iluminação automática"],
+          },
+          {
+            title: "Instalações diversas",
+            items: [
+              "Substituição e instalação de lâmpadas e luminárias de jardim",
+              "Refletores, lustres, arandelas, pendentes e spots",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Gerais",
+        services: [
+          {
+            title: "Infraestrutura",
+            items: ["Organização de infraestruturas e cabos"],
+          },
+          {
+            title: "Instalações gerais",
+            items: [
+              "Instalação de televisão",
+              "Instalação de ventiladores de teto e de parede",
+              "Instalação de portão eletrônico",
+            ],
+          },
+          {
+            title: "Projetos",
+            items: [
+              "Projeto executivo das instalações elétricas",
+              "Projeto do QDC",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -96,13 +199,90 @@ const portfolios = [
     icon: Lightbulb,
     intro:
       "Conforto, cenas e controle inteligente integrados ao projeto de arquitetura — tecnologia que se usa todos os dias.",
-    items: [
-      "Cenas de iluminação e conforto térmico",
-      "Controle por app e assistentes virtuais",
-      "Automação de cortinas, climatização e acessos",
-      "Infraestrutura de rede e cabeamento estruturado",
-      "Integração com projeto de arquitetura",
-      "Eficiência energética residencial",
+    groups: [
+      {
+        name: "Segurança",
+        services: [
+          {
+            title: "Fechaduras eletrônicas de alta segurança",
+            items: ["Instalação, configuração e testes de operação de fechaduras inteligentes"],
+          },
+          {
+            title: "Monitoramento de vídeo inteligente",
+            items: ["Instalação de câmeras de segurança integradas a um sistema de supervisão"],
+          },
+          {
+            title: "Sistema de alarmes",
+            items: ["Configuração de alarmes inteligentes com notificações no celular em tempo real"],
+          },
+        ],
+      },
+      {
+        name: "Iluminação",
+        services: [
+          {
+            title: "Interruptores inteligentes",
+            items: [
+              "Instalação, configuração e testes de operação de interruptores inteligentes",
+              "Integração à assistente virtual via comando de voz",
+            ],
+          },
+          {
+            title: "Criação de cenários",
+            items: [
+              "Configuração de cenários de iluminação",
+              "Controle dos cenários por comando de voz",
+            ],
+          },
+          {
+            title: "Sensores automatizados",
+            items: ["Sensores de presença integrados ao sistema para iluminação automática"],
+          },
+        ],
+      },
+      {
+        name: "Climatização",
+        services: [
+          {
+            title: "Controle do ar-condicionado via smartphone",
+            items: [
+              "Integração de interfaces Wi-Fi e emissores de infravermelho de alta precisão",
+            ],
+          },
+          {
+            title: "Conforto térmico",
+            items: [
+              "Cenários personalizados: Modo Dormir, Modo Cinema e Modo Trabalho",
+              "Controle de temperatura em horários programados",
+            ],
+          },
+          {
+            title: "Integração com assistente virtual",
+            items: ["Ligar, desligar e controlar a temperatura por comando de voz"],
+          },
+        ],
+      },
+      {
+        name: "Controle",
+        services: [
+          {
+            title: "Automação de cargas e equipamentos",
+            items: [
+              "Pontos inteligentes para controle de geladeira, fogão, ventiladores, cafeteira e outros",
+            ],
+          },
+          {
+            title: "Medição de consumo",
+            items: ["Visualização em tempo real do gasto de energia de cada aparelho conectado"],
+          },
+          {
+            title: "Proteção elétrica inteligente",
+            items: [
+              "Desligamento automático em sobrecargas e picos de energia, evitando queima de equipamentos",
+            ],
+          },
+        ],
+      },
     ],
   },
   {
@@ -112,13 +292,101 @@ const portfolios = [
     icon: Factory,
     intro:
       "Engenharia de controle de ponta a ponta: da especificação de instrumentação ao SCADA em operação assistida.",
-    items: [
-      "Levantamento de cargas e pontos de automação",
-      "Dimensionamento de cabos, eletrocalhas e eletrodutos",
-      "Especificação de sensores, transmissores e CLPs",
-      "Projeto executivo e arquitetura de rede",
-      "Programação de CLP, inversores e soft starters",
-      "Telas SCADA, alarmes, tendências e relatórios",
+    groups: [
+      {
+        name: "Infra e comandos",
+        services: [
+          {
+            title: "Dimensionamento",
+            items: [
+              "Dimensionamento e especificação de quadros de automação",
+              "Dimensionamento e especificação de infraestruturas e cabos",
+              "Dimensionamento e especificação de sensores e atuadores",
+            ],
+          },
+          {
+            title: "Instalação",
+            items: [
+              "Instalação e montagem de infraestrutura industrial",
+              "Eletrocalhas, eletrodutos e lançamento de cabos de potência, sinal e rede sob NR-10",
+            ],
+          },
+          {
+            title: "Inversores e soft starters",
+            items: [
+              "Configuração avançada de torque, velocidade e rampas de aceleração e frenagem",
+              "Integração em redes industriais via Modbus RTU/TCP",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Desenvolvimento",
+        services: [
+          {
+            title: "Programação de CLP",
+            items: [
+              "Lógicas complexas (Ladder/FBD/Script) para automação de processos e máquinas",
+            ],
+          },
+          {
+            title: "Interfaces Homem-Máquina (IHM)",
+            items: [
+              "Telas intuitivas para operação local, diagnóstico de falhas e controle de variáveis em tempo real",
+            ],
+          },
+          {
+            title: "Sistemas SCADA",
+            items: [
+              "Monitoramento em tempo real de variáveis críticas via rede",
+              "Controle centralizado da operação",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Projetos",
+        services: [
+          {
+            title: "Quadros elétricos e de automação",
+            items: ["Elaboração de projeto e layouts para montagem de quadros"],
+          },
+          {
+            title: "Engenharia de automação",
+            items: [
+              "Concepção do projeto de controle e automação",
+              "Elaboração do fluxograma de engenharia de automação",
+            ],
+          },
+          {
+            title: "Redes industriais",
+            items: ["Elaboração de arquitetura de rede de automação"],
+          },
+        ],
+      },
+      {
+        name: "Redes",
+        services: [
+          {
+            title: "Protocolos de comunicação",
+            items: [
+              "Configuração e diagnóstico de redes Modbus (RTU e TCP/IP), Profibus e Ethernet/IP",
+            ],
+          },
+          {
+            title: "Integração de dispositivos",
+            items: [
+              "Gateways, switches industriais e roteadores para comunicação entre SCADA, CLPs, IHMs e inversores",
+            ],
+          },
+          {
+            title: "Monitoramento e gestão remota",
+            items: [
+              "Centralização dos dispositivos da rede em sistemas BMS e SCADA para controle total do processo",
+            ],
+          },
+        ],
+      },
     ],
   },
 ];
@@ -217,6 +485,30 @@ const clients: ClientLogo[] = [
     segment: "Manutenção & eficiência",
     logo: cliDesenbahia.url,
   },
+  {
+    name: "Boulevard Shopping Vitória da Conquista",
+    category: "Shopping Centers",
+    segment: "Automação predial",
+    logo: cliBsvc.url,
+  },
+  {
+    name: "Shopping da Bahia",
+    category: "Shopping Centers",
+    segment: "Facilities & BMS",
+    logo: cliSdb.url,
+  },
+  {
+    name: "Hospital Cárdio Pulmonar",
+    category: "Saúde",
+    segment: "Elétrica hospitalar",
+    logo: cliHcp.url,
+  },
+  {
+    name: "Hospital Aristides Maltez",
+    category: "Saúde",
+    segment: "Manutenção & automação",
+    logo: cliHam.url,
+  },
 ];
 
 
@@ -251,33 +543,6 @@ const cultura = [
   },
 ];
 
-const areas = [
-  {
-    sigla: "ADM",
-    nome: "Administrativo",
-    text: "Diretoria, financeiro, compras, contratos e conformidade, RH e gestão de colaboradores, além de Operações & Tech.",
-  },
-  {
-    sigla: "COM",
-    nome: "Comercial",
-    text: "Processo comercial estruturado em 10 etapas — da prospecção fria ao pós-venda e aprendizado.",
-  },
-  {
-    sigla: "OM",
-    nome: "Obras e Manutenções",
-    text: "Planejamento e execução de obras, manutenção preventiva e corretiva, segurança e padrão de entrega.",
-  },
-  {
-    sigla: "MKT",
-    nome: "Marketing",
-    text: "Autoridade técnica em Instagram, LinkedIn e site, marketing de conteúdo e geração de demanda qualificada.",
-  },
-  {
-    sigla: "CI",
-    nome: "Cursos e Infoprodutos",
-    text: "Treinamentos e mentorias técnicas, e-books, manuais operacionais e templates comerciais e técnicos.",
-  },
-];
 
 const valores = [
   "Disciplina",
@@ -291,8 +556,20 @@ const valores = [
 
 function Index() {
   const [activePortfolio, setActivePortfolio] = useState<string>(portfolios[2]!.id);
+  const [activeGroup, setActiveGroup] = useState(0);
   const [openCultura, setOpenCultura] = useState<number | null>(0);
   const [scrolled, setScrolled] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+    } catch {
+      /* ignore */
+    }
+    setEmailCopied(true);
+    window.setTimeout(() => setEmailCopied(false), 2400);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -302,6 +579,8 @@ function Index() {
   }, []);
 
   const current = portfolios.find((p) => p.id === activePortfolio) ?? portfolios[0]!;
+  const groupIndex = Math.min(activeGroup, current.groups.length - 1);
+  const group = current.groups[groupIndex]!;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -360,9 +639,13 @@ function Index() {
             </Reveal>
             <Reveal delay={220}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Projetos e execução em elétrica e automação residencial, predial e industrial — do
-                dimensionamento de cargas ao SCADA em operação assistida. Excelência técnica,
-                documentação impecável e obra entregue do jeito certo.
+                Somos uma empresa de Elétrica e Automação que vive dia a dia executando obras e
+                manutenções. Com mais de 4 anos de prática no mercado e mais de 20 clientes de
+                grande porte atendidos em todo Brasil, nossos objetivos são claros:
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground sm:text-lg">
+                Reduzimos os custos dos nossos clientes e aumentamos a eficiência de suas operações
+                através de projetos e soluções em elétrica e automação.
               </p>
             </Reveal>
             <Reveal delay={320}>
@@ -487,7 +770,10 @@ function Index() {
               <button
                 key={p.id}
                 type="button"
-                onClick={() => setActivePortfolio(p.id)}
+                onClick={() => {
+                  setActivePortfolio(p.id);
+                  setActiveGroup(0);
+                }}
                 className={`inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] transition ${
                   activePortfolio === p.id
                     ? "border-primary bg-primary/10 text-primary"
@@ -507,14 +793,47 @@ function Index() {
               {current.intro}
             </p>
             <div className="gold-rule my-8" />
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {current.items.map((it) => (
-                <li key={it} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <Wrench className="mt-0.5 size-4 shrink-0 text-primary" />
-                  <span>{it}</span>
-                </li>
+
+            <div role="tablist" aria-label="Escopos" className="flex flex-wrap gap-2">
+              {current.groups.map((g, i) => {
+                const on = i === groupIndex;
+                return (
+                  <button
+                    key={g.name}
+                    type="button"
+                    role="tab"
+                    aria-selected={on}
+                    onClick={() => setActiveGroup(i)}
+                    className={
+                      on
+                        ? "rounded-full border border-primary/70 bg-primary/15 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-primary transition"
+                        : "rounded-full border border-border px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition hover:border-primary/50 hover:text-primary"
+                    }
+                  >
+                    {g.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {group.services.map((s, i) => (
+                <article key={s.title} className="rounded-xl border border-border/70 bg-background/40 p-6">
+                  <span className="font-display text-gilded text-2xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h4 className="mt-2 text-base font-medium text-foreground">{s.title}</h4>
+                  <ul className="mt-4 space-y-3">
+                    {s.items.map((it) => (
+                      <li key={it} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <Wrench className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -627,50 +946,6 @@ function Index() {
         </div>
       </section>
 
-      {/* ESTRUTURA */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-5">
-          <Reveal>
-            <SectionTitle
-              kicker="Estrutura"
-              title="Uma empresa organizada por áreas"
-              desc="Organograma vivo: cada área com responsabilidade, indicador e dono — o que garante entrega consistente e escala sem perder qualidade."
-            />
-          </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {areas.map((a, i) => (
-              <Reveal key={a.sigla} delay={i * 90}>
-                <article className="surface-card h-full rounded-xl p-7">
-                  <div className="flex items-center gap-4">
-                    <span
-                      className="font-display grid size-14 shrink-0 place-items-center rounded-lg text-sm text-primary-foreground"
-                      style={{ background: "var(--gradient-gold)" }}
-                    >
-                      {a.sigla}
-                    </span>
-                    <h3 className="font-display min-w-0 text-xl">{a.nome}</h3>
-                  </div>
-                  <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{a.text}</p>
-                </article>
-              </Reveal>
-            ))}
-            <Reveal delay={450}>
-              <article className="surface-card flex h-full flex-col justify-center gap-3 rounded-xl p-7">
-                <Building2 className="size-7 text-primary" />
-                <h3 className="font-display text-xl">Abrangência</h3>
-                <ul className="mt-1 space-y-2 text-sm text-muted-foreground">
-                  {["Salvador", "Lauro de Freitas", "Camaçari"].map((c) => (
-                    <li key={c} className="flex items-center gap-2">
-                      <MapPin className="size-4 shrink-0 text-primary" />
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* CTA / CONTATO */}
       <section id="contato" className="relative overflow-hidden border-t border-border py-24">
@@ -695,12 +970,13 @@ function Index() {
               >
                 <MessageCircle className="size-4" /> WhatsApp
               </a>
-              <a
-                href="mailto:contato@decastroengenharia.com.br"
+              <button
+                type="button"
+                onClick={copyEmail}
                 className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition hover:bg-primary/10"
               >
-                E-mail
-              </a>
+                <Mail className="size-4" /> E-mail
+              </button>
             </div>
           </Reveal>
         </div>
@@ -715,15 +991,48 @@ function Index() {
             </p>
           </div>
           <div className="flex shrink-0 items-center gap-4">
-            <a href="#topo" aria-label="Instagram" className="text-muted-foreground transition hover:text-primary">
+            <a
+              href="https://www.instagram.com/decastro.engenharia"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="text-muted-foreground transition hover:text-primary"
+            >
               <Instagram className="size-5" />
             </a>
-            <a href="#topo" aria-label="LinkedIn" className="text-muted-foreground transition hover:text-primary">
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground transition hover:text-primary"
+            >
               <Linkedin className="size-5" />
             </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              aria-label="Copiar e-mail"
+              className="text-muted-foreground transition hover:text-primary"
+            >
+              <Mail className="size-5" />
+            </button>
           </div>
         </div>
       </footer>
+
+      {/* Confirmação de e-mail copiado */}
+      <div
+        aria-live="polite"
+        className={`pointer-events-none fixed bottom-5 left-5 z-50 flex items-center gap-3 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-5 py-3 text-sm text-emerald-300 backdrop-blur transition-all duration-300 ${
+          emailCopied ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+        }`}
+      >
+        <span className="grid size-6 place-items-center rounded-full bg-emerald-500 text-black">
+          <Check className="size-4" />
+        </span>
+        E-mail copiado
+      </div>
     </div>
   );
 }
