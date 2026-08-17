@@ -485,6 +485,30 @@ const clients: ClientLogo[] = [
     segment: "Manutenção & eficiência",
     logo: cliDesenbahia.url,
   },
+  {
+    name: "Boulevard Shopping Vitória da Conquista",
+    category: "Shopping Centers",
+    segment: "Automação predial",
+    logo: cliBsvc.url,
+  },
+  {
+    name: "Shopping da Bahia",
+    category: "Shopping Centers",
+    segment: "Facilities & BMS",
+    logo: cliSdb.url,
+  },
+  {
+    name: "Hospital Cárdio Pulmonar",
+    category: "Saúde",
+    segment: "Elétrica hospitalar",
+    logo: cliHcp.url,
+  },
+  {
+    name: "Hospital Aristides Maltez",
+    category: "Saúde",
+    segment: "Manutenção & automação",
+    logo: cliHam.url,
+  },
 ];
 
 
@@ -615,9 +639,13 @@ function Index() {
             </Reveal>
             <Reveal delay={220}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Projetos e execução em elétrica e automação residencial, predial e industrial — do
-                dimensionamento de cargas ao SCADA em operação assistida. Excelência técnica,
-                documentação impecável e obra entregue do jeito certo.
+                Somos uma empresa de Elétrica e Automação que vive dia a dia executando obras e
+                manutenções. Com mais de 4 anos de prática no mercado e mais de 20 clientes de
+                grande porte atendidos em todo Brasil, nossos objetivos são claros:
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground sm:text-lg">
+                Reduzimos os custos dos nossos clientes e aumentamos a eficiência de suas operações
+                através de projetos e soluções em elétrica e automação.
               </p>
             </Reveal>
             <Reveal delay={320}>
@@ -942,12 +970,13 @@ function Index() {
               >
                 <MessageCircle className="size-4" /> WhatsApp
               </a>
-              <a
-                href="mailto:contato@decastroengenharia.com.br"
+              <button
+                type="button"
+                onClick={copyEmail}
                 className="inline-flex items-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-primary transition hover:bg-primary/10"
               >
-                E-mail
-              </a>
+                <Mail className="size-4" /> E-mail
+              </button>
             </div>
           </Reveal>
         </div>
@@ -962,12 +991,32 @@ function Index() {
             </p>
           </div>
           <div className="flex shrink-0 items-center gap-4">
-            <a href="#topo" aria-label="Instagram" className="text-muted-foreground transition hover:text-primary">
+            <a
+              href="https://www.instagram.com/decastro.engenharia"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="text-muted-foreground transition hover:text-primary"
+            >
               <Instagram className="size-5" />
             </a>
-            <a href="#topo" aria-label="LinkedIn" className="text-muted-foreground transition hover:text-primary">
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground transition hover:text-primary"
+            >
               <Linkedin className="size-5" />
             </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              aria-label="Copiar e-mail"
+              className="text-muted-foreground transition hover:text-primary"
+            >
+              <Mail className="size-5" />
+            </button>
           </div>
         </div>
       </footer>
